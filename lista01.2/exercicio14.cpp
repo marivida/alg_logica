@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include <stdio.h>
+#include <math.h>
 
 int main()
 {
-  // Faça um programa que receba o salário inicial de um
+  // 14. Faça um programa que receba o salário inicial de um
   // funcionário, calcule e mostre o novo salario, acrescido de
   // bonificação e de auxilio escola
 
@@ -13,4 +13,19 @@ int main()
 
   // salario ate 600 - auxilio 150
   // salario acima 600 - auxilio 100
+
+  float salario, novoSalario, bonificacao, auxilio;
+
+  printf("Digite o salario inicial: ");
+  scanf("%f%*c", &salario);
+  if (salario <= 500)
+    novoSalario = salario * 1.05 + 150;
+  else if (salario <= 1200 && salario <= 600)
+    novoSalario = salario * 1.12 + 150;
+  else if (salario <= 1200 && salario > 600)
+    novoSalario = salario * 1.12 + 100;
+  else
+    novoSalario = salario + 100;
+
+  printf("Novo salario: %3.2f", novoSalario);
 }
